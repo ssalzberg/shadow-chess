@@ -48,12 +48,7 @@ class GamesController < ApplicationController
   end
   
   def json_success
-    res = {:success => true}
-    if @game.moves.count == 0
-      render :json => res.to_json
-    else
-      render :json => res.merge(:status => Game.current.to_hash).to_json
-    end
+    render :json => {:success => true, :status => Game.current.to_hash}.to_json
   end
   
 end
