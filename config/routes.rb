@@ -4,6 +4,7 @@ RealChessWithFriends::Application.routes.draw do
   match '/test' => "games#test", :as => "test"
   match "/new" => "games#new", :as => "new_game"
   match "/move" => "games#move", :as => "move"
+  match "/last_move" => "games#last_move", :as => "last_move"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
