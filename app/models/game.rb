@@ -81,6 +81,10 @@ class Game < ActiveRecord::Base
     !self.winner.nil?
   end
   
+  def self.pieceName(pieceNumber)
+    Game.const_get("Piece").constants.map { |s| s.to_s.gsub(/((WHITE|BLACK)_)|[0-9]/,"") }[pieceNumber]
+  end
+  
   def to_hash
     if self.moves.count > 0
       return self.moves.last.to_hash

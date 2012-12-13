@@ -442,3 +442,4 @@ Processing by GamesController#move as HTML
   [1m[36mMove Load (0.1ms)[0m  [1mSELECT "moves".* FROM "moves" WHERE "moves"."game_id" = 3 ORDER BY "moves"."id" DESC LIMIT 1[0m
 Completed 200 OK in 55ms (Views: 0.2ms | ActiveRecord: 3.8ms)
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
