@@ -59,7 +59,7 @@ class Game < ActiveRecord::Base
   
   def current_board
     if self.moves.count == 1
-      self.moves.last.current_board
+      self.moves.last.currentBoard
     else
       INITIAL_BOARD
     end
