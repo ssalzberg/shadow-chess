@@ -37,6 +37,7 @@ class GamesController < ApplicationController
   end
   
   def last_move
+    @game = Game.current
     json_success and return
   end
   
