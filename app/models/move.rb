@@ -56,7 +56,7 @@ class Move < ActiveRecord::Base
   
   def to_hash
     {
-      :current_board => self.currentBoard.flatten.to_json,
+      :current_board => self.currentBoard.flatten,
       :fromI => self.fromIndex,
       :toI => self.toIndex,
       :isCheck => self.isCheck,

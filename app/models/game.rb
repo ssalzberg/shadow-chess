@@ -86,7 +86,7 @@ class Game < ActiveRecord::Base
       return self.moves.last.to_hash
     else
       {
-        :current_board => INITIAL_BOARD.flatten.to_json,
+        :current_board => INITIAL_BOARD.flatten,
         :isNewGame => true,
         :player => Player::WHITE
       }
