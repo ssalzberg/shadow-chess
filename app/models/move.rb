@@ -65,7 +65,7 @@ class Move < ActiveRecord::Base
       :isCapture => !self.capturedPiece.nil?,
       :capturedPieceName => Game.pieceName(self.capturedPiece),
       :capturedPiece => self.capturedPiece,
-      :mover => self.mover ? 0 : 1,
+      :mover => self.mover ? 1 : 0,
       :isNewGame => false
     }
   end

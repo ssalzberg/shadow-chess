@@ -83,7 +83,7 @@ class Game < ActiveRecord::Base
   
   def self.pieceName(pieceNumber)
     return "" if pieceNumber.nil? 
-    Game.const_get("Piece").constants.map { |s| s.to_s.gsub(/((WHITE|BLACK)_)|[0-9]/,"") }[pieceNumber]
+    Game.const_get("Piece").constants.map { |s| s.to_s.gsub(/((WHITE|BLACK)_)|[0-9]/,"") }[pieceNumber].downcase
   end
   
   def to_hash
