@@ -63,7 +63,7 @@ class Move < ActiveRecord::Base
       :isCheckmate => self.isCheckmate,
       :isCapture => !self.capturedPiece.nil?,
       :capturedPiece => self.capturedPiece,
-      :player => self.mover,
+      :mover => self.mover ? 0 : 1,
       :isNewGame => false
     }
   end
