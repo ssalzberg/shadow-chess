@@ -56,10 +56,8 @@ class Move < ActiveRecord::Base
   
   def to_hash
     {
-      :current_board => self.currentBoard.flatten,
+      :currentBoard => self.currentBoard.flatten,
       :movedPieceName => Game.pieceName(self.currentBoard[self.toY][self.toX]),
-      :fromSquareName => self.squareName(self.fromX,self.fromY),
-      :toSquareName => self.squareName(self.toX,self.toY),
       :fromI => self.fromIndex,
       :toI => self.toIndex,
       :isCheck => self.isCheck,
