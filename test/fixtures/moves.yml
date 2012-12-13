@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  mover: MyString
+  toX: 1
+  toY: 1
+  capturedPiece: MyString
+  isCheck: false
+  isCheckmate: false
+
+two:
+  mover: MyString
+  toX: 1
+  toY: 1
+  capturedPiece: MyString
+  isCheck: false
+  isCheckmate: false

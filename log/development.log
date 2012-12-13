@@ -1,0 +1,444 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-12-02 14:25:47 -0500
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (22ms)
+
+
+Started GET "/test" for 127.0.0.1 at 2012-12-02 14:25:49 -0500
+
+AbstractController::ActionNotFound (The action 'test' could not be found for GamesController):
+  actionpack (3.2.6) lib/abstract_controller/base.rb:116:in `process'
+  actionpack (3.2.6) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.6) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.6) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.6) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.6) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.6) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.6) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.6) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.6) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.6) lib/active_support/callbacks.rb:405:in `_run__1646234359510694997__call__4591689223582010183__callbacks'
+  activesupport (3.2.6) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.6) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.6) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.6) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.6) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.6) lib/rails/engine.rb:479:in `call'
+  railties (3.2.6) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.6) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/shaun/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/shaun/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/shaun/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (45.9ms)
+
+
+Started GET "/test" for 127.0.0.1 at 2012-12-02 14:26:06 -0500
+Processing by GamesController#test as HTML
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/test?test=a" for 127.0.0.1 at 2012-12-02 14:26:09 -0500
+Processing by GamesController#test as HTML
+  Parameters: {"test"=>"a"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/test" for 127.0.0.1 at 2012-12-02 14:26:13 -0500
+Processing by GamesController#test as HTML
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateGames (20121130235324)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "winner" varchar(255), "total_moves" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121130235324')
+  [1m[36m (1.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateMoves (20121130235752)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "moves" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mover" varchar(255), "toX" integer, "toY" integer, "capturedPiece" varchar(255), "isCheck" boolean, "isCheckmate" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121130235752')
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+Migrating to AddCurrentBoardToMove (20121212223517)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "moves" ADD "currentBoard" text[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "moves" ADD "fromX" integer
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "moves" ADD "fromY" integer[0m
+  [1m[35m (0.7ms)[0m  CREATE TEMPORARY TABLE "altered_moves" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mover" varchar(255), "toX" integer, "toY" integer, "capturedPiece" varchar(255), "isCheck" boolean, "isCheckmate" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "currentBoard" text, "fromX" integer, "fromY" integer) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("moves")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "moves"
+  [1m[36m (0.5ms)[0m  [1mDROP TABLE "moves"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "moves" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mover" varchar(255), "toX" integer, "toY" integer, "isCheck" boolean, "isCheckmate" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "currentBoard" text, "fromX" integer, "fromY" integer) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("altered_moves")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "altered_moves"
+  [1m[36m (0.4ms)[0m  [1mDROP TABLE "altered_moves"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "moves" ADD "capturedPiece" integer
+  [1m[36m (0.3ms)[0m  [1mCREATE TEMPORARY TABLE "altered_moves" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mover" varchar(255), "toX" integer, "toY" integer, "isCheck" boolean, "isCheckmate" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "currentBoard" text, "fromX" integer, "fromY" integer, "capturedPiece" integer) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("moves")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "moves"[0m
+  [1m[35m (0.2ms)[0m  DROP TABLE "moves"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "moves" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "toX" integer, "toY" integer, "isCheck" boolean, "isCheckmate" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "currentBoard" text, "fromX" integer, "fromY" integer, "capturedPiece" integer) [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("altered_moves")
+  [1m[36m (0.1ms)[0m  [1mSELECT * FROM "altered_moves"[0m
+  [1m[35m (0.1ms)[0m  DROP TABLE "altered_moves"
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "moves" ADD "mover" boolean[0m
+  [1m[35m (0.1ms)[0m  CREATE TEMPORARY TABLE "altered_games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "winner" varchar(255), "total_moves" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("games")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "games"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "games"[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "games" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "total_moves" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("altered_games")[0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "altered_games"
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "altered_games"[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "games" ADD "winner" boolean
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121212223517')[0m
+  [1m[35m (1.5ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("games")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("moves")
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2012-12-12 18:38:53 -0500
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (3ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2012-12-12 18:40:34 -0500
+
+SyntaxError (/Users/shaun/src/mit/how-to-make/final/real-chess-with-friends/app/controllers/games_controller.rb:59: syntax error, unexpected '}', expecting ')'
+...ame.current.moves.last.to_hash}).to_json
+...                               ^
+/Users/shaun/src/mit/how-to-make/final/real-chess-with-friends/app/controllers/games_controller.rb:62: syntax error, unexpected $end, expecting keyword_end):
+  activesupport (3.2.6) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.6) lib/active_support/inflector/methods.rb:229:in `block in constantize'
+  activesupport (3.2.6) lib/active_support/inflector/methods.rb:228:in `each'
+  activesupport (3.2.6) lib/active_support/inflector/methods.rb:228:in `constantize'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.6) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.6) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.6) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.6) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.6) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.6) lib/active_support/callbacks.rb:405:in `_run__405953391419327483__call__1545312856974071049__callbacks'
+  activesupport (3.2.6) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.6) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.6) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.6) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.6) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.6) lib/rails/engine.rb:479:in `call'
+  railties (3.2.6) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.6) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/shaun/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/shaun/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/shaun/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.4ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (66.4ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2012-12-12 18:40:45 -0500
+
+SyntaxError (/Users/shaun/src/mit/how-to-make/final/real-chess-with-friends/app/controllers/games_controller.rb:59: syntax error, unexpected '}', expecting ')'
+...ame.current.moves.last.to_hash}).to_json
+...                               ^):
+  activesupport (3.2.6) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.6) lib/active_support/inflector/methods.rb:229:in `block in constantize'
+  activesupport (3.2.6) lib/active_support/inflector/methods.rb:228:in `each'
+  activesupport (3.2.6) lib/active_support/inflector/methods.rb:228:in `constantize'
+  activesupport (3.2.6) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.6) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.6) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.6) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.6) lib/action_dispatch/routing/route_set.rb:600:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  activerecord (3.2.6) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:473:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.6) lib/active_support/callbacks.rb:405:in `_run__405953391419327483__call__1545312856974071049__callbacks'
+  activesupport (3.2.6) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.6) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.6) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.6) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.6) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.6) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.6) lib/action_dispatch/middleware/static.rb:62:in `call'
+  railties (3.2.6) lib/rails/engine.rb:479:in `call'
+  railties (3.2.6) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.6) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/shaun/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/shaun/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/shaun/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.0ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2012-12-12 18:40:57 -0500
+Processing by GamesController#new as HTML
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (77.9ms)[0m  INSERT INTO "games" ("created_at", "total_moves", "updated_at", "winner") VALUES (?, ?, ?, ?)  [["created_at", Wed, 12 Dec 2012 23:40:57 UTC +00:00], ["total_moves", nil], ["updated_at", Wed, 12 Dec 2012 23:40:57 UTC +00:00], ["winner", nil]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Completed 500 Internal Server Error in 218ms
+
+NoMethodError (undefined method `moves' for #<Game:0x007fba344930b8>):
+  app/controllers/games_controller.rb:56:in `json_success'
+  app/controllers/games_controller.rb:14:in `new'
+
+
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.9ms)
+
+
+Started GET "/new" for 127.0.0.1 at 2012-12-12 18:41:11 -0500
+Processing by GamesController#new as HTML
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "games" ("created_at", "total_moves", "updated_at", "winner") VALUES (?, ?, ?, ?)[0m  [["created_at", Wed, 12 Dec 2012 23:41:11 UTC +00:00], ["total_moves", nil], ["updated_at", Wed, 12 Dec 2012 23:41:11 UTC +00:00], ["winner", nil]]
+  [1m[35m (2.1ms)[0m  commit transaction
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM "moves" WHERE "moves"."game_id" = 2[0m
+SQLite3::SQLException: no such column: moves.game_id: SELECT COUNT(*) FROM "moves"  WHERE "moves"."game_id" = 2
+Completed 500 Internal Server Error in 194ms
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: moves.game_id: SELECT COUNT(*) FROM "moves"  WHERE "moves"."game_id" = 2):
+  app/controllers/games_controller.rb:56:in `json_success'
+  app/controllers/games_controller.rb:14:in `new'
+
+
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.5ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateGames (20121130235324)
+Migrating to CreateMoves (20121130235752)
+Migrating to AddCurrentBoardToMove (20121212223517)
+Migrating to AddRelations (20121212234137)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "moves" ADD "game_id" integer
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20121212234137')[0m
+  [1m[35m (1.9ms)[0m  commit transaction
+  [1m[36m (0.5ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.0ms)[0m  [1mPRAGMA index_list("games")[0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("moves")
+
+
+Started GET "/new" for 127.0.0.1 at 2012-12-12 18:42:27 -0500
+Connecting to database specified by database.yml
+Processing by GamesController#new as HTML
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (12.6ms)[0m  INSERT INTO "games" ("created_at", "total_moves", "updated_at", "winner") VALUES (?, ?, ?, ?)  [["created_at", Wed, 12 Dec 2012 23:42:27 UTC +00:00], ["total_moves", nil], ["updated_at", Wed, 12 Dec 2012 23:42:27 UTC +00:00], ["winner", nil]]
+  [1m[36m (2.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "moves" WHERE "moves"."game_id" = 3
+Completed 200 OK in 174ms (Views: 0.2ms | ActiveRecord: 24.6ms)
+
+
+Started GET "/move?fromI=0&toI=1&mover=0" for 127.0.0.1 at 2012-12-12 18:44:48 -0500
+Processing by GamesController#move as HTML
+  Parameters: {"fromI"=>"0", "toI"=>"1", "mover"=>"0"}
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms
+
+NoMethodError (undefined method `toI' for 0:Fixnum):
+  app/controllers/games_controller.rb:31:in `move'
+
+
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.0ms)
+
+
+Started GET "/move?fromI=0&toI=1&mover=0" for 127.0.0.1 at 2012-12-12 18:45:08 -0500
+Processing by GamesController#move as HTML
+  Parameters: {"fromI"=>"0", "toI"=>"1", "mover"=>"0"}
+  [1m[35mGame Load (0.1ms)[0m  SELECT "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mGame Load (0.2ms)[0m  SELECT "games".* FROM "games" WHERE "games"."id" = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "moves" WHERE "moves"."game_id" = 3[0m
+  [1m[35mMove Load (0.1ms)[0m  SELECT "moves".* FROM "moves" WHERE "moves"."game_id" = 3 ORDER BY "moves"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 500 Internal Server Error in 121ms
+
+NoMethodError (undefined method `current_board' for nil:NilClass):
+  app/models/game.rb:62:in `current_board'
+  app/models/move.rb:22:in `set_current_board'
+  app/models/move.rb:12:in `block in <class:Move>'
+  app/controllers/games_controller.rb:41:in `move'
+
+
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.8ms)
+
+
+Started GET "/move?fromI=0&toI=1&mover=0" for 127.0.0.1 at 2012-12-12 18:45:43 -0500
+Processing by GamesController#move as HTML
+  Parameters: {"fromI"=>"0", "toI"=>"1", "mover"=>"0"}
+  [1m[35mGame Load (0.1ms)[0m  SELECT "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mGame Load (0.2ms)[0m  SELECT "games".* FROM "games" WHERE "games"."id" = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "moves" WHERE "moves"."game_id" = 3[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 31ms
+
+NoMethodError (undefined method `move' for #<Move:0x007fb079908ce8>):
+  app/controllers/games_controller.rb:41:in `move'
+
+
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.6ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.7ms)
+
+
+Started GET "/move?fromI=0&toI=1&mover=0" for 127.0.0.1 at 2012-12-12 18:46:38 -0500
+Processing by GamesController#move as HTML
+  Parameters: {"fromI"=>"0", "toI"=>"1", "mover"=>"0"}
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGame Load (0.2ms)[0m  [1mSELECT "games".* FROM "games" WHERE "games"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "moves" WHERE "moves"."game_id" = 3
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+Completed 200 OK in 115ms (Views: 0.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/move?fromI=0&toI=1&mover=0" for 127.0.0.1 at 2012-12-12 18:48:27 -0500
+Processing by GamesController#move as HTML
+  Parameters: {"fromI"=>"0", "toI"=>"1", "mover"=>"0"}
+  [1m[35mGame Load (0.1ms)[0m  SELECT "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mGame Load (0.2ms)[0m  SELECT "games".* FROM "games" WHERE "games"."id" = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "moves" WHERE "moves"."game_id" = 3[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Completed 500 Internal Server Error in 70ms
+
+ActiveRecord::RecordInvalid (Validation failed: Mover can't be blank, Currentboard can't be blank):
+  app/controllers/games_controller.rb:41:in `move'
+
+
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /Users/shaun/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.2.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.0ms)
+
+
+Started GET "/move?fromI=0&toI=1&mover=0" for 127.0.0.1 at 2012-12-12 18:48:51 -0500
+Processing by GamesController#move as HTML
+  Parameters: {"fromI"=>"0", "toI"=>"1", "mover"=>"0"}
+  [1m[36mGame Load (0.1ms)[0m  [1mSELECT "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mGame Load (0.2ms)[0m  [1mSELECT "games".* FROM "games" WHERE "games"."id" = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "moves" WHERE "moves"."game_id" = 3
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "moves" ("capturedPiece", "created_at", "currentBoard", "fromX", "fromY", "game_id", "isCheck", "isCheckmate", "mover", "toX", "toY", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["capturedPiece", 11], ["created_at", Wed, 12 Dec 2012 23:48:51 UTC +00:00], ["currentBoard", "--- \n- - 0\n  - 9\n  - 13\n  - 15\n  - 16\n  - 14\n  - 12\n  - 10\n- - 1\n  - 2\n  - 3\n  - 4\n  - 5\n  - 6\n  - 7\n  - 8\n- - 0\n  - 0\n  - 0\n  - 0\n  - 0\n  - 0\n  - 0\n  - 0\n- - 0\n  - 0\n  - 0\n  - 0\n  - 0\n  - 0\n  - 0\n  - 0\n- - 0\n  - 0\n  - 0\n  - 0\n  - 0\n  - 0\n  - 0\n  - 0\n- - 0\n  - 0\n  - 0\n  - 0\n  - 0\n  - 0\n  - 0\n  - 0\n- - 17\n  - 18\n  - 19\n  - 20\n  - 21\n  - 22\n  - 23\n  - 24\n- - 25\n  - 27\n  - 29\n  - 31\n  - 32\n  - 30\n  - 28\n  - 26\n"], ["fromX", 0], ["fromY", 0], ["game_id", 3], ["isCheck", false], ["isCheckmate", false], ["mover", false], ["toX", 1], ["toY", 0], ["updated_at", Wed, 12 Dec 2012 23:48:51 UTC +00:00]]
+  [1m[35m (1.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "moves" WHERE "moves"."game_id" = 3[0m
+  [1m[35mGame Load (0.1ms)[0m  SELECT "games".* FROM "games" ORDER BY "games"."id" DESC LIMIT 1
+  [1m[36mMove Load (0.1ms)[0m  [1mSELECT "moves".* FROM "moves" WHERE "moves"."game_id" = 3 ORDER BY "moves"."id" DESC LIMIT 1[0m
+Completed 200 OK in 55ms (Views: 0.2ms | ActiveRecord: 3.8ms)
+Connecting to database specified by database.yml

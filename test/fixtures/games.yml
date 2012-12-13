@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  winner: MyString
+  total_moves: 1
+
+two:
+  winner: MyString
+  total_moves: 1
