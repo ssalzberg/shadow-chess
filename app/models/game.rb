@@ -82,6 +82,7 @@ class Game < ActiveRecord::Base
   end
   
   def self.pieceName(pieceNumber)
+    return "" if pieceNumber.nil? 
     Game.const_get("Piece").constants.map { |s| s.to_s.gsub(/((WHITE|BLACK)_)|[0-9]/,"") }[pieceNumber]
   end
   
