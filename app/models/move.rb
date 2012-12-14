@@ -54,18 +54,38 @@ class Move < ActiveRecord::Base
     self.toX + 8 * self.toY
   end
   
-  def to_hash
+  def fromX=(x)
+    self[:fromX] = self.player == Game::Player::ONE ? x : 8 - x
+  end
+  
+  def fromY=(y)
+    self[:fromY] = self.player == Game::Player::ONE ? y : 8 - y
+  end
+  
+  def toX=(x)
+    self[:toX] = self.player == Game::Player::ONE ? x : 8 - x
+  end
+  
+  def toY=(y)
+    self[:toY] = self.player == Game::Player::ONE ? y : 8 - y
+  end
+  
+  def player
+    self.mover ? Game::Player::TWO : Game::Player::ONE
+  end
+  
+  def to_hash(player)
     {
-      :currentBoard => self.currentBoard.flatten,
+      :currentBoard => Game.board_to_return_for_player(self.currentBoard,player),
       :movedPieceName => Game.pieceName(self.currentBoard[self.toY][self.toX]),
-      :fromI => self.fromIndex,
-      :toI => self.toIndex,
+      :fromI => player == Game::Player::ONE ? self.fromIndex : 63 - self.fromIndex,
+      :toI => player == Game::Player::ONE ? self.toIndex : 63 - self.ftoIndex,
       :isCheck => self.isCheck,
       :isCheckmate => self.isCheckmate,
       :isCapture => !self.capturedPiece.nil?,
       :capturedPieceName => Game.pieceName(self.capturedPiece),
       :capturedPiece => self.capturedPiece,
-      :mover => self.mover ? 1 : 0,
+      :player => self.mover ? Game::Player::TWO : Game::Player::ONE,
       :isNewGame => false
     }
   end

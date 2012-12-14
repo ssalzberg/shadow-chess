@@ -4,6 +4,11 @@ class Game < ActiveRecord::Base
   has_many :moves
   
   module Player
+    ONE = 0
+    TWO = 1
+  end
+  
+  module Color
     WHITE = 0
     BLACK = 1
   end
@@ -86,14 +91,22 @@ class Game < ActiveRecord::Base
     Game.const_get("Piece").constants.map { |s| s.to_s.gsub(/((WHITE|BLACK)_)|[0-9]/,"") }[pieceNumber].downcase
   end
   
-  def to_hash
+  def self.board_to_return_for_player(board,player)
+    if player == Player::ONE 
+      return board.flatten
+    else
+      return board.flatten.reverse
+    end
+  end
+  
+  def to_hash(player)
     if self.moves.count > 0
-      return self.moves.last.to_hash
+      return self.moves.last.to_hash(player)
     else
       {
-        :current_board => INITIAL_BOARD.flatten,
+        :current_board => Game.board_to_return_for_player(INITIAL_BOARD,player),
         :isNewGame => true,
-        :player => Player::WHITE
+        :player => Player::ONE
       }
     end
   end

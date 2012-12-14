@@ -2,11 +2,13 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.create!
+    @player = Player::ONE
     json_success and return
   end
   
   def move
     @game = Game.current
+    @player = params[:player].to_i
     
     if @game.over?
       json_fail("Game Over","Reset pieces...") and return
@@ -21,13 +23,12 @@ class GamesController < ApplicationController
     toX = toI%8
     toY = (toI/8).to_i
     
-    m = @game.moves.new({
-      :fromX => fromX,
-      :fromY => fromY,
-      :toX => toX,
-      :toY => toY,
-      :mover => params[:mover].to_i == 0 ? false : true
-    })
+    m = @game.moves.new
+    m.mover = @player == Player::ONE ? false : true
+    m.fromX = fromX
+    m.fromY = fromY
+    m.toX = toX
+    m.toY = toY
     
     if m.save!
       json_success and return
@@ -38,6 +39,7 @@ class GamesController < ApplicationController
   
   def last_move
     @game = Game.current
+    @player = params[:player].to_i
     json_success and return
   end
   
@@ -48,7 +50,7 @@ class GamesController < ApplicationController
   end
   
   def json_success
-    render :json => {:success => true}.merge(Game.current.to_hash).to_json
+    render :json => {:success => true}.merge(Game.current.to_hash(@player)).to_json
   end
   
 end
