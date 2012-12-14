@@ -79,7 +79,7 @@ class Move < ActiveRecord::Base
       :currentBoard => Game.board_to_return_for_player(self.currentBoard,player),
       :movedPieceName => Game.pieceName(self.currentBoard[self.toY][self.toX]),
       :fromI => player == Game::Player::ONE ? self.fromIndex : 63 - self.fromIndex,
-      :toI => player == Game::Player::ONE ? self.toIndex : 63 - self.ftoIndex,
+      :toI => player == Game::Player::ONE ? self.toIndex : 63 - self.toIndex,
       :isCheck => self.isCheck,
       :isCheckmate => self.isCheckmate,
       :isCapture => !self.capturedPiece.nil?,
