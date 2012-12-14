@@ -2,7 +2,7 @@ class GamesController < ApplicationController
 
   def new
     @game = Game.create!
-    @player = Player::ONE
+    @player = Game::Player::ONE
     json_success and return
   end
   
@@ -24,7 +24,7 @@ class GamesController < ApplicationController
     toY = (toI/8).to_i
     
     m = @game.moves.new
-    m.mover = @player == Player::ONE ? false : true
+    m.mover = @player == Game::Player::ONE ? false : true
     m.fromX = fromX
     m.fromY = fromY
     m.toX = toX
