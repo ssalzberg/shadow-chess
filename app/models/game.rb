@@ -97,10 +97,9 @@ class Game < ActiveRecord::Base
     else
       swappedBoard = INITIAL_BOARD
       
-      4.times do |y|
+      8.times do |y|
         8.times do |x|
-          swappedBoard[y][x] = board[7-y][x]
-          swappedBoard[7-y][x] = board[y][x]
+          swappedBoard[y][x] = (board[y][x] == Piece::EMPTY_SPACE) ? Piece::EMPTY_SPACE : ((((board[y][x] - 1)+16)%32)+1)
         end
       end
       
