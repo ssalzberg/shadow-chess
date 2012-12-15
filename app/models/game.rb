@@ -95,7 +95,7 @@ class Game < ActiveRecord::Base
     if player == Player::ONE 
       return board.flatten
     else
-      return board.flatten.reverse
+      return board.reverse.flatten
     end
   end
   
