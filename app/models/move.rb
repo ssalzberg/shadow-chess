@@ -59,7 +59,7 @@ class Move < ActiveRecord::Base
   # end
   
   def fromY=(y)
-    self[:fromY] = self.player == Game::Player::ONE ? y : 8 - y
+    self[:fromY] = self.player == Game::Player::ONE ? y : 7 - y
   end
   
   # def toX=(x)
@@ -67,7 +67,7 @@ class Move < ActiveRecord::Base
   # end
   
   def toY=(y)
-    self[:toY] = self.player == Game::Player::ONE ? y : 8 - y
+    self[:toY] = self.player == Game::Player::ONE ? y : 7 - y
   end
   
   def player
@@ -79,8 +79,8 @@ class Move < ActiveRecord::Base
     toI = self.toIndex
     
     if player == Game::Player::TWO
-      fromI = self.fromX + 8 * (8 - self.fromY)
-      toI = self.toX + 8 * (8 - self.toY)
+      fromI = self.fromX + 8 * (7 - self.fromY)
+      toI = self.toX + 8 * (7 - self.toY)
     end
     
     {
