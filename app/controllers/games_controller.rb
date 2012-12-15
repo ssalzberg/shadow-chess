@@ -50,6 +50,7 @@ class GamesController < ApplicationController
   end
   
   def json_success
+    Rails.logger.info @game.inspect
     render :json => {:success => true}.merge(@game.to_hash(@player)).to_json
   end
   

@@ -84,7 +84,7 @@ class Move < ActiveRecord::Base
     end
     
     {
-      :currentBoard => Game.board_to_return_for_player(self.currentBoard.dup,player),
+      :currentBoard => Game.board_to_return_for_player(self.currentBoard,player),
       :movedPieceName => Game.pieceName(self.currentBoard[self.toY][self.toX]),
       :fromI => fromI,
       :toI => toI,

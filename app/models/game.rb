@@ -52,21 +52,30 @@ class Game < ActiveRecord::Base
   end
   
   INITIAL_BOARD = [
-    [Piece::WHITE_ROOK1,  Piece::WHITE_KNIGHT1,  Piece::WHITE_BISHOP1,  Piece::WHITE_QUEEN,  Piece::WHITE_KING,   Piece::WHITE_BISHOP2,  Piece::WHITE_KNIGHT2,   Piece::WHITE_ROOK2],
-    [Piece::WHITE_PAWN1,  Piece::WHITE_PAWN2,    Piece::WHITE_PAWN3,    Piece::WHITE_PAWN4,  Piece::WHITE_PAWN5,  Piece::WHITE_PAWN6,    Piece::WHITE_PAWN7,     Piece::WHITE_PAWN8],
-    [Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,     Piece::EMPTY_SPACE],
-    [Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,     Piece::EMPTY_SPACE],
-    [Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,     Piece::EMPTY_SPACE],
-    [Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,     Piece::EMPTY_SPACE],
-    [Piece::BLACK_PAWN1,  Piece::BLACK_PAWN2,    Piece::BLACK_PAWN3,    Piece::BLACK_PAWN4,  Piece::BLACK_PAWN5,  Piece::BLACK_PAWN6,    Piece::BLACK_PAWN7,     Piece::BLACK_PAWN8],
-    [Piece::BLACK_ROOK1,  Piece::BLACK_KNIGHT1,  Piece::BLACK_BISHOP1,  Piece::BLACK_QUEEN,  Piece::BLACK_KING,   Piece::BLACK_BISHOP2,  Piece::BLACK_KNIGHT2,   Piece::BLACK_ROOK2]  
-  ]
+    [Piece::WHITE_ROOK1,  Piece::WHITE_KNIGHT1,  Piece::WHITE_BISHOP1,  Piece::WHITE_QUEEN,  Piece::WHITE_KING,   Piece::WHITE_BISHOP2,  Piece::WHITE_KNIGHT2,   Piece::WHITE_ROOK2].freeze,
+    [Piece::WHITE_PAWN1,  Piece::WHITE_PAWN2,    Piece::WHITE_PAWN3,    Piece::WHITE_PAWN4,  Piece::WHITE_PAWN5,  Piece::WHITE_PAWN6,    Piece::WHITE_PAWN7,     Piece::WHITE_PAWN8].freeze,
+    [Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,     Piece::EMPTY_SPACE].freeze,
+    [Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,     Piece::EMPTY_SPACE].freeze,
+    [Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,     Piece::EMPTY_SPACE].freeze,
+    [Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,  Piece::EMPTY_SPACE,    Piece::EMPTY_SPACE,     Piece::EMPTY_SPACE].freeze,
+    [Piece::BLACK_PAWN1,  Piece::BLACK_PAWN2,    Piece::BLACK_PAWN3,    Piece::BLACK_PAWN4,  Piece::BLACK_PAWN5,  Piece::BLACK_PAWN6,    Piece::BLACK_PAWN7,     Piece::BLACK_PAWN8].freeze,
+    [Piece::BLACK_ROOK1,  Piece::BLACK_KNIGHT1,  Piece::BLACK_BISHOP1,  Piece::BLACK_QUEEN,  Piece::BLACK_KING,   Piece::BLACK_BISHOP2,  Piece::BLACK_KNIGHT2,   Piece::BLACK_ROOK2].freeze  
+  ].freeze
   
   def current_board
-    if self.moves.count == 1
-      self.moves.last.currentBoard
+    if self.moves.count > 0
+      return self.moves.last.currentBoard
     else
-      INITIAL_BOARD
+      # INITIAL_BOARD
+      res = [[],[],[],[],[],[],[],[]]
+      
+      8.times do |y|
+        8.times do |x|
+          res[y][x] = INITIAL_BOARD[y][x]
+        end
+      end
+      
+      return res
     end
   end
   
@@ -95,7 +104,7 @@ class Game < ActiveRecord::Base
     if player == Player::ONE 
       return board.flatten
     else
-      swappedBoard = INITIAL_BOARD
+      swappedBoard = [[],[],[],[],[],[],[],[]]
       
       8.times do |y|
         8.times do |x|
@@ -109,10 +118,13 @@ class Game < ActiveRecord::Base
   
   def to_hash(player)
     if self.moves.count > 0
+      Rails.logger.info "HAS MOVES: game_id: #{self.id}"
       return self.moves.last.to_hash(player)
     else
+      Rails.logger.info("NO MOVES: #{self.id}")
+      Rails.logger.info(INITIAL_BOARD.inspect)
       {
-        :current_board => Game.board_to_return_for_player(INITIAL_BOARD.dup,player),
+        :current_board => Game.board_to_return_for_player(INITIAL_BOARD,player),
         :isNewGame => true,
         :player => Player::ONE
       }
