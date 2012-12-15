@@ -112,7 +112,7 @@ class Game < ActiveRecord::Base
       return self.moves.last.to_hash(player)
     else
       {
-        :current_board => Game.board_to_return_for_player(INITIAL_BOARD,player),
+        :current_board => Game.board_to_return_for_player(INITIAL_BOARD.dup,player),
         :isNewGame => true,
         :player => Player::ONE
       }

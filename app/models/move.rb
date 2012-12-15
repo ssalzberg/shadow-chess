@@ -19,7 +19,7 @@ class Move < ActiveRecord::Base
   
   # assumes move is valid
   def set_current_board
-      previousBoard = self.game.current_board
+      previousBoard = Game.current.current_board
       
       if previousBoard[self.toY][self.toX] != Game::Piece::EMPTY_SPACE
         self.capturedPiece = previousBoard[self.toY][self.toX]
@@ -84,7 +84,7 @@ class Move < ActiveRecord::Base
     end
     
     {
-      :currentBoard => Game.board_to_return_for_player(self.currentBoard,player),
+      :currentBoard => Game.board_to_return_for_player(self.currentBoard.dup,player),
       :movedPieceName => Game.pieceName(self.currentBoard[self.toY][self.toX]),
       :fromI => fromI,
       :toI => toI,
