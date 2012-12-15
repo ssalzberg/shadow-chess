@@ -95,12 +95,12 @@ class Game < ActiveRecord::Base
     if player == Player::ONE 
       return board.flatten
     else
-      swappedBoard = board
+      swappedBoard = INITIAL_BOARD
       
       4.times do |y|
         8.times do |x|
-          swappedBoard[y][x] = board[8-y][x]
-          swappedBoard[8-y][x] = board[y][x]
+          swappedBoard[y][x] = board[7-y][x]
+          swappedBoard[7-y][x] = board[y][x]
         end
       end
       
