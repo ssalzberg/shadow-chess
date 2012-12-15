@@ -50,7 +50,7 @@ class GamesController < ApplicationController
   end
   
   def json_success
-    render :json => {:success => true}.merge(Game.current.to_hash(@player)).to_json
+    render :json => {:success => true}.merge(@game.to_hash(@player)).to_json
   end
   
 end
