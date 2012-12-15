@@ -54,17 +54,17 @@ class Move < ActiveRecord::Base
     self.toX + 8 * self.toY
   end
   
-  def fromX=(x)
-    self[:fromX] = self.player == Game::Player::ONE ? x : 8 - x
-  end
+  # def fromX=(x)
+  #   self[:fromX] = self.player == Game::Player::ONE ? x : 8 - x
+  # end
   
   def fromY=(y)
     self[:fromY] = self.player == Game::Player::ONE ? y : 8 - y
   end
   
-  def toX=(x)
-    self[:toX] = self.player == Game::Player::ONE ? x : 8 - x
-  end
+  # def toX=(x)
+  #   self[:toX] = self.player == Game::Player::ONE ? x : 8 - x
+  # end
   
   def toY=(y)
     self[:toY] = self.player == Game::Player::ONE ? y : 8 - y
@@ -75,11 +75,19 @@ class Move < ActiveRecord::Base
   end
   
   def to_hash(player)
+    fromI = self.fromIndex
+    toI = self.toIndex
+    
+    if player == Game::Player::TWO
+      fromI = self.fromX + 8 * (8 - self.fromY)
+      toI = self.toX + 8 * (8 - self.toY)
+    end
+    
     {
       :currentBoard => Game.board_to_return_for_player(self.currentBoard,player),
       :movedPieceName => Game.pieceName(self.currentBoard[self.toY][self.toX]),
-      :fromI => player == Game::Player::ONE ? self.fromIndex : 63 - self.fromIndex,
-      :toI => player == Game::Player::ONE ? self.toIndex : 63 - self.toIndex,
+      :fromI => fromI,
+      :toI => toI,
       :isCheck => self.isCheck,
       :isCheckmate => self.isCheckmate,
       :isCapture => !self.capturedPiece.nil?,
